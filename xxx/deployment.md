@@ -8,3 +8,18 @@ App中转方式，如上图，APPserver作为中转服务的客户端，所有�
 ![](/assets/ERP中转部署图2.jpg)
 Erp中转方式，如上图，ERPserver作为中转服务的客户端，APPserver通过中转服务，对ERPserver发出调用请求。客户端和APPserver都部署在企业外网，只有ERPserver部署在企业内网。
 
+##中转密钥
+通过工具，生成中转密钥，密钥内容如下：
+
+```
+                {"adapterName", "ForwardCenter"},
+                {"serverAddress", "forward.labelcloud.cn"},
+                {"serverPort", "8080"},
+                {"domainNumber", domainNumber},
+                {"clientId", clientId},
+                {"clientSecret", clientSecret},
+                {"machineCode", RsaVerifyHelper.GetLocalMachineCode()},
+                {"sericeName", svrName},
+                {"enable", "true"}
+```
+
