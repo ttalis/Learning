@@ -10,6 +10,7 @@ Erp中转方式，如上图，ERPserver作为中转服务的客户端，APPserve
 
 ##中转密钥
 通过工具，生成中转密钥，密钥内容如下：
+##gvserhserth
 
 ```
                 {"adapterName", "ForwardCenter"},
@@ -22,4 +23,9 @@ Erp中转方式，如上图，ERPserver作为中转服务的客户端，APPserve
                 {"sericeName", svrName},
                 {"enable", "true"}
 ```
+
+``` public class a```
+sdafsda 
+
+##asdfasdfawsrghsertg
 
