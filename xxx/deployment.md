@@ -9,23 +9,43 @@ App中转方式，如上图，APPserver作为中转服务的客户端，所有�
 Erp中转方式，如上图，ERPserver作为中转服务的客户端，APPserver通过中转服务，对ERPserver发出调用请求。客户端和APPserver都部署在企业外网，只有ERPserver部署在企业内网。
 
 ##中转密钥
-通过工具，生成中转密钥，密钥内容如下：
-##gvserhserth
+通过工具，生成中转密钥 【ForwardKey】文件，密钥内容类似如下：
 
 ```
-                {"adapterName", "ForwardCenter"},
-                {"serverAddress", "forward.labelcloud.cn"},
-                {"serverPort", "8080"},
-                {"domainNumber", domainNumber},
-                {"clientId", clientId},
-                {"clientSecret", clientSecret},
-                {"machineCode", RsaVerifyHelper.GetLocalMachineCode()},
-                {"sericeName", svrName},
-                {"enable", "true"}
+<?xml version="1.0" encoding="utf-8"?>
+<ForwardService>
+  <para adapterName="ForwardCenter" />
+  <para serverAddress="forward.labelcloud.cn" />
+  <para serverPort="8080" />
+  <para domainNumber="260000065" />
+  <para clientId="Ypq6e7vxK" />
+  <para clientSecret="c52ca688ee7b4a6898e78314db784717" />
+  <para machineCode="7CFA5E5C-6559A281-CEB2EE89-9278E722" />
+  <para sericeName="260000065#7021" />
+  <para enable="true" />
+</ForwardService>
 ```
-
-``` public class a```
-sdafsda 
-
-##asdfasdfawsrghsertg
+* 按方式一部署的时候，需要把中转密钥放到APPserver和客户端的运行目录下。
+* 按方式二部署的时候，需要把中转密钥放到ERPserver运行目录下，并修改Appserver中unity_communication.confg的配置指向中转服务。配置参考如下：
+```
+      <register type="IServiceCenter" mapTo="IceClientProxy">
+        <lifetime type="singleton"/>
+        <constructor>
+          <param name="adapterName">
+            <value value="ForwardCenter"/>
+          </param>
+          <param name="serverAddress">
+            <value value="forward.labelcloud.cn"/>
+          </param>
+          <param name="serverPort">
+            <value value="8080"/>
+          </param>
+          <param name="connectionNotify">
+            <dependency type="IConnectionStatusNotify" name="localObj" />
+          </param>
+        </constructor>
+        <property name="ForwardName" value="260000065#7029"/>
+        <property name="ForwardType" value="Client"/>
+      </register>
+```
 
