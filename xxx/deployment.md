@@ -55,3 +55,7 @@ Erp中转方式，如上图，ERPserver作为中转服务的客户端，APPserve
 <font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
 <font color=#00ffff size=72>color=#00ffff</font>
 <font color=gray size=72>color=gray</font>
+
+#山东分公司而过
+<table><tr><td bgcolor=orange>背景色是：orange</td></tr></table>
+
