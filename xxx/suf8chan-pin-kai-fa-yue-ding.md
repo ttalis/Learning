@@ -1,4 +1,6 @@
 #添加新功能的操作指南
+![](/assets/开发新功能.jpg)
+
 1. 从develop分支签出代码
 http://gitsvr.mipesoft.com/project-team/project_suf8_k3cloud.git
 
