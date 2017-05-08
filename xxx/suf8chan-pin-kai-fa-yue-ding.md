@@ -14,7 +14,7 @@ http://gitsvr.mipesoft.com/project-team/project_suf8_k3cloud.git
 
 5. jenkins上进行develop的编译
 
-6. 从服务器指定位置获取安装包进行测试·
+6. 从服务器指定位置获取安装包进行测试
 
 
 
